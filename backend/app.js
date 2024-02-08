@@ -33,9 +33,11 @@ app.use(cors());
 app.use(errorHandler);
 
 
-//routes middleware
+//routes
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
 app.use("/api",authRoutes);
+app.use("/api",userRoutes);
 
 
 //server started
