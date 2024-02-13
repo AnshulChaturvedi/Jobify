@@ -5,14 +5,13 @@ const bodyParser = require("body-parser");
 var cors = require('cors');
 
 require("dotenv").config();
-//port
-const PORT = process.env.PORT || 9000
+const PORT = process.env.PORT || 3000;
 
 const cookieParser = require("cookie-parser");
 const errorHandler = require("./middleware/error");
 
 //database connection
-const connectDB = require("../backend/config/database");
+const connectDB = require("./config/database");
 connectDB();
 
 //middleware
@@ -36,16 +35,15 @@ app.use(errorHandler);
 //routes
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const jobTypeRoute = require("./routes/jobsTypeRoutes");
+const jobRoute = require("./routes/jobsRoutes");
 app.use("/api",authRoutes);
 app.use("/api",userRoutes);
+app.use("/api", jobTypeRoute);
+app.use("/api", jobRoute);
 
 
 //server started
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-});
-
-//default route
-app.get("/",(req,res) => {
-  res.send(`<h1>This is homepage baby.</h1>`)
 });

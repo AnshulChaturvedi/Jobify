@@ -3,10 +3,11 @@ const ErrorResponse = require("../utils/errorResponse");
 
 exports.signup = async (req, res, next) => {
   const { email } = req.body;
-  const userExist = await User.findOne({ email:email});
+  const userExist = await User.findOne({email});
   if (userExist) {
     return next(new ErrorResponse("E-mail already registred", 400));
   }
+  
   try {
     const user = await User.create(req.body);
     res.status(201).json({
@@ -21,6 +22,7 @@ exports.signup = async (req, res, next) => {
 exports.signin = async (req, res, next) => {
   try {
     const { email, password } = req.body;
+
     //validation
     if (!email) {
       return next(new ErrorResponse("please add an email", 403));
@@ -41,7 +43,8 @@ exports.signin = async (req, res, next) => {
     }
 
     sendTokenResponse(user, 200, res);
-  } catch (error) {
+  }
+  catch (error) {
     next(error);
   }
 };
