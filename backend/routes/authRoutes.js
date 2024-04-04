@@ -4,11 +4,14 @@ const {signup,signin, logout, userProfile} = require("../controllers/authControl
 const { isAuthenticated } = require("../middleware/auth");
 
 
-// auth routes
-
+//auth routes
+// /api/signup
 router.post("/signup", signup);
+// /api/signin
 router.post("/signin", signin);
+// /api/logout
 router.get("/logout", logout);
-router.get("/me", isAuthenticated , userProfile);
+// /api/me
+router.get("/me", isAuthenticated, userProfile);
 
 module.exports = router;
