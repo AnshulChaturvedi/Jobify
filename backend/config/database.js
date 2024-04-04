@@ -9,7 +9,7 @@ const connectDB = () => {
         useUnifiedTopology: true,
         useCreateIndex: true,
         useFindAndModify: false
-    }).then(() => console.log("Databse connected Successfully."))
+    }).then(() => console.log("Databse connected Successfully"))
     .catch((err) => console.log(err));
 }
 
