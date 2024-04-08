@@ -2,17 +2,16 @@
 
 ## Description:-
 Jobify is a full-stack web application built with the MERN (MongoDB, Express.js, React.js, Node.js) stack. 
-It serves as a job portal where job seekers can search and apply for jobs, and employers can post job listings.
-The application provides a user-friendly interface for both job seekers and employers to interact with the platform.
+It serves as a job portal where job seekers can search and apply for jobs, and Admin can post job listings.
+The application provides a user-friendly interface for both job seekers and an Admin to interact with the platform.
 
 ## Features:-
 - User Authentication: Users can sign up, log in, and log out securely.
-- Job Listings: Employers can post job listings with details such as job title, description, requirements, and location.
+- Job Listings: Admin can post job listings with details such as job title, description, requirements, and location.
 - Job Search: Job seekers can search for jobs based on various criteria like job title, location, and category.
 - Job Applications: Job seekers can apply for jobs directly through the platform.
-- Dashboard: Both job seekers and employers have their own dashboards to manage their profiles, job listings, and applications.
+- Dashboard: Both job seekers and Admin have their own dashboards to manage their profiles, job listings, and applications.
 - Real-time Updates: Users receive real-time updates for new job listings and application statuses.
-- Responsive Design: The application is responsive and works seamlessly across different devices and screen sizes.
 
 ## Technologies Used:-
 ### (1)Frontend:-
