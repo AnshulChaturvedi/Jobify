@@ -16,6 +16,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='*' element={<NotFound />} />
+                <Route path='/search/location/:location' element={<Home />} />
             </Routes>
         </BrowserRouter>
     </ThemeProvider>
